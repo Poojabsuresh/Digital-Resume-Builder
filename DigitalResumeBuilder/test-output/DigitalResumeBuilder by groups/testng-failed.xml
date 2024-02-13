@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DigitalResumeBuilder by groups]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="GRP-do(failed)">
+    <groups>
+      <run>
+        <include name="do"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.resumebuilder.test.TestClass">
+        <methods>
+          <include name="TC_LG_004"/>
+          <include name="TC_PC_002"/>
+          <include name="TC_PC_001"/>
+        </methods>
+      </class> <!-- com.resumebuilder.test.TestClass -->
+    </classes>
+  </test> <!-- GRP-do(failed) -->
+</suite> <!-- Failed suite [DigitalResumeBuilder by groups] -->
