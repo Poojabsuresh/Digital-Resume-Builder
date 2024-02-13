@@ -384,7 +384,7 @@ public class Profile {
 		Thread.sleep(1000);
 	}
 	public void File(String f) throws InterruptedException {
-		file.sendKeys("D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg");
+		file.sendKeys(f);
 		Thread.sleep(3000);
 	}
 	public void Accept() throws InterruptedException {

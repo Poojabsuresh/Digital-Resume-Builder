@@ -25,6 +25,9 @@ public class Download {
 	@FindBy(xpath="//*[@id=\"web-development\"]/div/div/div[1]/div[2]/a/figure/img")
 	private WebElement selecttemp3;
 	
+	@FindBy(xpath="//a[@href='/editform']")
+	private WebElement edit;
+	
 	
 	public Download(WebDriver driver2) {
 		this.driver=driver2;
@@ -71,6 +74,12 @@ public void selectTemplate2() throws InterruptedException {
 		Thread.sleep(4000);
 		driver.switchTo().alert().accept();
 		Thread.sleep(3000);
+	}
+	public void editDetails() throws InterruptedException {
+		JavascriptExecutor js=((JavascriptExecutor)driver);
+		js.executeScript("arguments[0].click();",edit);
+		Thread.sleep(3000);
+		
 	}
 
 }

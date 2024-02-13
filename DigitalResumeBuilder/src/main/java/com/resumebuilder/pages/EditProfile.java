@@ -378,8 +378,8 @@ WebDriver driver;
 		about.sendKeys(abt);
 	}
 	public void File(String f) throws InterruptedException {
-		f="D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg";
-		
+//		f="D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg";
+//		
 		file.sendKeys(f);
 		Thread.sleep(2000);
 	}
@@ -395,5 +395,5 @@ WebDriver driver;
 		Thread.sleep(4000);
 		driver.switchTo().alert().accept();
 	}
-
+	
 }

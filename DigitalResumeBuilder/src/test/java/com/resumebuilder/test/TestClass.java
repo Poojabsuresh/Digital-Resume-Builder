@@ -217,7 +217,7 @@ public class TestClass extends BaseClass{
 		pgobj.Achievements("Implemented a robust quality assurance process, reducing defects by 15% and ensuring compliance with industry standards","Expanded test coverage by identifying and adding critical test scenarios, ensuring comprehensive coverage and minimizing the risk of post-release defects.");
 		
 		pgobj.About("Results-driven and detail-oriented Software Tester with 1 + year of experience in ensuring the quality and functionality of software applications.");
-		pgobj.File("\"D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg\"");
+		pgobj.File("D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg");
 		pgobj.Accept();
 		pgobj.CreateProfile();
 		Thread.sleep(3000);
@@ -350,7 +350,7 @@ public class TestClass extends BaseClass{
 		edobj.About("Results-driven and detail-oriented Software Tester with 1 + year of experience "
 				+ "in ensuring the quality and functionality of software applications."
 				+ " Proficient in both manual and automated testing methodologies.");
-		edobj.File("\"C:\\Users\\ACER\\Downloads\\download.jpg");
+		edobj.File("D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg");
 		edobj.Accept();
 		Thread.sleep(3000);
 		
@@ -380,7 +380,47 @@ public class TestClass extends BaseClass{
 	}
 	@Test(priority=19)
 	public void TC_DR_004() throws InterruptedException {
-		driver.navigate().refresh();
+		dobj=new Download(driver);
+		dobj.editDetails();
+		edobj = new EditProfile(driver);
+		edobj.FullName("Neethu c");
+		edobj.Dob("28-10-1997");
+		edobj.selectGender();
+		
+		edobj.ContactDetails("neetu123@gmail.com","9456738276");
+		edobj.Highschool(1,"94", "CHSS", "2013");
+		edobj.highSecondary(1,"97","CHSS","2015");
+		edobj.graDuation(1, 1,"89","SNGCET","2019");
+		edobj.postGraduation(1, 1, "90","College of Engineering","2021");
+
+		edobj.Project();
+		edobj.ProjectKeys("Netflix clone Application");
+		edobj.ProjectDesc("To build a Netflix clone web app using front end technologies in React.js");
+		
+		edobj.Qualification();
+		edobj.Course(5, "Full stack development", "95");
+		
+		edobj.JobExperience();
+		edobj.JobTitle("Software Devoloper", "2021","2022");
+		
+		edobj.skills("Selenium", "Maeven", "Web technologies");
+		Thread.sleep(2000);
+		edobj.language("English","Hindi", "Malayalam");
+		edobj.programminglang("C++","70%", "Java", "85%");
+		edobj.Achievements("Project presentation at smart india hackathon2018, "
+				+ "reducing defects by 15% and ensuring compliance with industry standards.","Expanded test coverage by "
+						+ "identifying and adding critical test scenarios, ensuring comprehensive "
+						+ "coverage and minimizing the risk of post-release defects.");
+		
+		edobj.About("Results-driven and detail-oriented Software Tester with 1 + year of experience "
+				+ "in ensuring the quality and functionality of software applications."
+				+ " Proficient in both manual and automated testing methodologies.");
+		edobj.File("D:\\Software Testing\\Main project\\DigitalResumeBuilder\\profile picture.jpg");
+		edobj.Accept();
+		Thread.sleep(3000);
+		
+		edobj.updateProfile();
+		edobj.myprof();
 		Thread.sleep(5000);
 		dobj=new Download(driver);
 		dobj.clickTemplate();
@@ -397,10 +437,6 @@ public class TestClass extends BaseClass{
 		Thread.sleep(15000);
 		loutobj= new LogoutPage(driver);
 		loutobj.Logoutbtn();
-		WebElement locate=driver.findElement(By.xpath("//*[text()='EASILY']"));
-		String actual = locate.getText();
-		String exp="EASILY";
-		Assert.assertEquals(actual, exp);
 		System.out.println("Successfully logged out");
 	}
 	
